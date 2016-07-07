@@ -11,16 +11,13 @@ namespace ClassLibrary1
     {
         public static int counter = 0;
 
-        public static void Main(string[] args)
+        public void Main(string[] args)
         {
             ThreadPool.QueueUserWorkItem(Foo);
             ThreadPool.QueueUserWorkItem(Foo);
-
-            Console.WriteLine("Hello World.");
-            Console.ReadKey();
         }
 
-        public static void Foo(Object bar)
+        public void Foo(Object bar)
         {
             Console.WriteLine(Interlocked.Increment(ref counter));
         }
